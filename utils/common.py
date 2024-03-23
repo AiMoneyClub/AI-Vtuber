@@ -1080,8 +1080,12 @@ class Common:
             list: 获取所有有标题的窗口名列表
         """
         import pygetwindow as gw
-
-        windows = gw.getWindowsWithTitle('')
+        import platform
+        windows = []
+        if platform.system() == 'Darwin':
+            print("mac")
+        else:
+            windows = gw.getWindowsWithTitle('')
         
         window_titles = []
 
